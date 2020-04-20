@@ -3,7 +3,6 @@ import { Link, useHistory } from 'react-router-dom';
 import { FiPower, FiTrash2 } from 'react-icons/fi';
 
 import api from '../../services/api';
-
 import './styles.css';
 
 import logoImg from '../../assests/logo.svg';
@@ -31,7 +30,7 @@ export default function Profile() {
         try{
             await api.delete(`incidents/${id}`, {
                 headers: {
-                    Authorization: ongId,
+                    Authorization: ongId
                 }
             });
 
@@ -63,7 +62,6 @@ export default function Profile() {
 
             <ul>
                 {incidents.map(incident => (
-                    console.log(incident.id),
                 <li key={incident.id}>
                     <strong>CASO:</strong>
                     <p>{incident.title}</p>
@@ -80,7 +78,6 @@ export default function Profile() {
                 </li>
                 ))}
             </ul>
-
         </div>
     );
 }
